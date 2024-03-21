@@ -1,0 +1,14 @@
+name: Run Renovate with local configuration
+description: This action runs Renovate with a local configuration file
+inputs:
+  token:
+    description: 'Token to use for Renovate'
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Renovate
+      uses: renovatebot/github-action@v40.1.3
+      with:
+        configurationFile: ${{ github.action_path }}/.github/renovate.json5
+        token: ${{ inputs.token }}

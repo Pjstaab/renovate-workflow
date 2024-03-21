@@ -1,0 +1,36 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "docker:enableMajor",
+    ":disableRateLimiting",
+    ":semanticCommits",
+    // ":automergeDigest",
+    // ":automergeBranch",
+    // "github>fieldnation/cluster-base//.github/renovate/autoMerge.json5",
+    "github>fieldnation/cluster-base//.github/renovate/commitMessage.json5",
+    "github>fieldnation/cluster-base//.github/renovate/labels.json5",
+    "github>fieldnation/cluster-base//.github/renovate/semanticCommits.json5",
+    "security:openssf-scorecard"
+  ],
+  "enabled": true,
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "dependencyDashboardAutoclose": true,
+  "configWarningReuseIssue": true,
+  "platformAutomerge": true,
+  "kubernetes": {
+    "fileMatch": [
+      "(clusters|infrastructure|tenants)/.+\\.ya?ml$",
+    ],
+  },
+  "docker-compose": {
+    "fileMatch": [
+      "(^|\/)docker-compose.*\\.ya?ml$"
+    ]
+  },
+  "flux": {
+    "fileMatch": [
+      "(clusters|infrastructure|tenants)/.+\\.ya?ml$"
+    ]
+  }
+}
