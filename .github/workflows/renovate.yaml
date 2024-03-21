@@ -6,9 +6,9 @@ on:
       # https://docs.renovatebot.com/self-hosted-configuration/#dryrun
       dryRun:
         description: "Dry Run"
-        default: false
+        default: "false"
         required: false
-        type: boolean
+        type: string
       # https://docs.renovatebot.com/examples/self-hosting/#about-the-log-level-numbers
       logLevel:
         description: "Log Level"
